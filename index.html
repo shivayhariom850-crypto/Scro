@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+  
+</body>
+
+</html><!DOCTYPE html>
+<html>
+<head>
+  <title>Scro</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial;
+      background: black;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    .video {
+      height: 100vh;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding: 20px;
+      box-sizing: border-box;
+      border-bottom: 1px solid #333;
+    }
+
+    .left {
+      max-width: 70%;
+    }
+
+    .actions {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      text-align: center;
+    }
+
+    button {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      opacity: 0.7;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- FIRST FEELS -->
+<div class="video">
+  <div class="left">
+    <h3>@user1</h3>
+    <p>This is a Feels video 🔥</p>
+  </div>
+
+  <div class="actions">
+    <button>❤️ Vibe</button>
+    <button>💬 Drop</button>
+    <button>🔁 Echo</button>
+    <button>👤 Track</button>
+    <button>💌 Ping</button>
+    <button>✨ Fura</button>
+  </div>
+</div>
+
+<script>
+  let count = 2;
+
+  window.addEventListener("scroll", () => {
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 10) {
+      
+      let div = document.createElement("div");
+      div.className = "video";
+
+      div.innerHTML = `
+        <div class="left">
+          <h3>@user${count}</h3>
+          <p>Another Feels video 😎</p>
+        </div>
+
+        <div class="actions">
+          <button>❤️ Vibe</button>
+          <button>💬 Drop</button>
+          <button>🔁 Echo</button>
+          <button>👤 Track</button>
+          <button>💌 Ping</button>
+          <button>✨ Fura</button>
+        </div>
+      `;
+
+      document.body.appendChild(div);
+      count++;
+    }
+  });
+</script>
+
+</body>
+</html>
